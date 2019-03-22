@@ -53,7 +53,8 @@ syn region  pugDocType start="^\s*\(!!!\|doctype\)" end="$"
 syn keyword pugHtmlArg contained href title
 
 syn match   pugPlainChar "\\" contained
-syn region  pugInterpolation matchgroup=pugInterpolationDelimiter start="[#!]{" end="}" contains=@htmlJavascript
+syn region  pugInterpolation matchgroup=pugInterpolationDelimiter start="[#!]{" end="}"
+" contains=@htmlJavascript
 syn match   pugInterpolationEscape "\\\@<!\%(\\\\\)*\\\%(\\\ze#{\|#\ze{\)"
 syn match   pugTagInlineText "\s.*$" contained contains=pugInterpolation,pugTextInlinePug,@Spell
 syn region  pugPipedText matchgroup=pugPipeChar start="|" end="$" contained contains=pugInterpolation,pugTextInlinePug,@Spell nextgroup=pugPipedText skipnl
